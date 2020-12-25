@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { HomePage, HomePageProps } from './index';
+import { HomePage, HomePageProps } from './home-page';
 
 export default {
-  title: 'Pages/HomePage',
+  title: 'Home/Pages/HomePage',
   component: HomePage,
 } as Meta;
 
