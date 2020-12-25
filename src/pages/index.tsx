@@ -1,7 +1,7 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
-import styles from "../styles/home-page.module.css";
+import styles from '../styles/home-page.module.css';
 
 export type HomePageProps = {};
 
@@ -14,11 +14,14 @@ export const HomePage: React.FC<HomePageProps> = () => (
 
     <main className={styles.main}>
       <h1 className={styles.title}>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        Welcome to
+        {' '}
+        <a href="https://nextjs.org">Next.js!</a>
       </h1>
 
       <p className={styles.description}>
-        Get started by editing{" "}
+        Get started by editing
+        {' '}
         <code className={styles.code}>pages/index.js</code>
       </p>
 
@@ -57,7 +60,8 @@ export const HomePage: React.FC<HomePageProps> = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by{" "}
+        Powered by
+        {' '}
         <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
       </a>
     </footer>

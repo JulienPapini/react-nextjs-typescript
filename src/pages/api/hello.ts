@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export type HelloResponseData = {
   name: string;
@@ -6,9 +6,9 @@ export type HelloResponseData = {
 
 export const helloHandler = (
   req: NextApiRequest,
-  res: NextApiResponse<HelloResponseData>
+  res: NextApiResponse<HelloResponseData>,
 ) => {
-  res.status(200).json({ name: "John Doe" });
+  res.status(200).json({ name: 'John Doe' });
 };
 
 export default helloHandler;
