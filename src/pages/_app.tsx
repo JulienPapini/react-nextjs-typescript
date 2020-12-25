@@ -1,10 +1,12 @@
 import React from 'react';
 import { AppProps } from 'next/app';
-
-import '@/styles/globals.css';
+import { GlobalStyles } from 'twin.macro';
 
 export const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => (
-  <Component {...pageProps} />
+  <>
+    <GlobalStyles />
+    <Component {...pageProps} />
+  </>
 );
 
 export default App;

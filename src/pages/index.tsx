@@ -1,62 +1,59 @@
 import React from 'react';
 import Head from 'next/head';
 
-import styles from '@/styles/home-page.module.css';
+import * as Styled from '@/styles/home-page.styles';
 
 export type HomePageProps = {};
 
 export const HomePage: React.FC<HomePageProps> = () => (
-  <div className={styles.container}>
+  <Styled.Container>
     <Head>
       <title>Create Next App</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <main className={styles.main}>
-      <h1 className={styles.title}>
+    <Styled.Main>
+      <Styled.Title>
         Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+      </Styled.Title>
 
-      <p className={styles.description}>
-        Get started by editing <code className={styles.code}>pages/index.js</code>
-      </p>
+      <Styled.Description>
+        Get started by editing <Styled.Code>pages/index.js</Styled.Code>
+      </Styled.Description>
 
-      <div className={styles.grid}>
-        <a href="https://nextjs.org/docs" className={styles.card}>
+      <Styled.Grid>
+        <Styled.Card href="https://nextjs.org/docs">
           <h3>Documentation &rarr;</h3>
           <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        </Styled.Card>
 
-        <a href="https://nextjs.org/learn" className={styles.card}>
+        <Styled.Card href="https://nextjs.org/learn">
           <h3>Learn &rarr;</h3>
           <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
+        </Styled.Card>
 
-        <a href="https://github.com/vercel/next.js/tree/master/examples" className={styles.card}>
+        <Styled.Card href="https://github.com/vercel/next.js/tree/master/examples">
           <h3>Examples &rarr;</h3>
           <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
+        </Styled.Card>
 
-        <a
-          href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className={styles.card}
-        >
+        <Styled.Card href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
           <h3>Deploy &rarr;</h3>
           <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-        </a>
-      </div>
-    </main>
+        </Styled.Card>
+      </Styled.Grid>
+    </Styled.Main>
 
-    <footer className={styles.footer}>
+    <Styled.Footer>
       <a
         href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+        Powered by <Styled.Logo src="/vercel.svg" alt="Vercel Logo" />
       </a>
-    </footer>
-  </div>
+    </Styled.Footer>
+  </Styled.Container>
 );
 
 export default HomePage;
