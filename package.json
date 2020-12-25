@@ -1,11 +1,19 @@
 {
   "name": "react-nextjs-typescript",
-  "version": "0.1.0",
+  "description": "",
+  "version": "1.0.0",
+  "contributors": [
+    {
+      "name": "Julien Papini",
+      "email": "julien.papini@gmail.com"
+    }
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
     "next": "10.0.4",
