@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import styles from '../styles/home-page.module.css';
+import styles from '@/styles/home-page.module.css';
 
 export type HomePageProps = {};
 
