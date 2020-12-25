@@ -1,0 +1,91 @@
+name: Test workflow
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  version-checking:
+    name: Version - Checking
+    runs-on: ubuntu-latest
+    outputs:
+      current-version: ${{ steps.package-version.outputs.current-version }}
+    steps:
+      - name: Fetching the repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Reading package.json version
+        id: package-version
+        uses: salsify/action-detect-and-tag-new-version@v2
+        with:
+          create-tag: false
+
+      - name: Checking version format
+        env:
+          CURRENT_VERSION: ${{ steps.package-version.outputs.current-version }}
+        run: |
+          if [[ ! "$CURRENT_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo Version must respect the following format x.x.x 1>&2
+            exit 1
+          fi
+
+  test-linting:
+    name: Test - Code linting
+    needs: version-checking
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetching the repository
+        uses: actions/checkout@v2
+
+      - name: Setting up Node 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Checking Node dependencies cache
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-npm
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-${{ env.cache-name }}-
+
+      - name: Installing Node dependencies
+        run: npm ci
+
+      - name: Linting source code
+        run: npm run lint
+
+  test-units:
+    name: Test - Units
+    needs: test-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetching the repository
+        uses: actions/checkout@v2
+
+      - name: Setting up Node 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Checking Node dependencies cache
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-npm
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-${{ env.cache-name }}-
+
+      - name: Installing Node dependencies
+        run: npm ci
+
+      - name: Running unit tests
+        run: npm test
+        env:
+          CI: true
