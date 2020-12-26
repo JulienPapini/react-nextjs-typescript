@@ -1,0 +1,17 @@
+{
+  "pages": {
+    "homePage": {
+      "welcomeTo": "Bienvenue sur",
+      "getStarted": "Commencez par éditer le fichier",
+      "documentation": "Documentation",
+      "documentationText": "Trouvez des informations détaillées sur les fonctionnalités et l'API de Next.js.",
+      "learn": "Apprendre",
+      "learnText": "Découvrez Next.js dans un cours interactif avec des quiz!",
+      "examples": "Exemples",
+      "examplesText": "Découvrez et déployez des exemples standard de projets Next.js.",
+      "deploy": "Déployer",
+      "deployText": "Déployez instantanément votre site Next.js sur une URL publique avec Vercel.",
+      "poweredBy": "Alimenté par"
+    }
+  }
+}

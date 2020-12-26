@@ -1,12 +1,19 @@
 import React from 'react';
-import { AppProps } from 'next/app';
+import NextApp from 'next/app';
 import { GlobalStyles } from 'twin.macro';
 
-export const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => (
-  <>
-    <GlobalStyles />
-    <Component {...pageProps} />
-  </>
-);
+import { appWithTranslation } from '@/i18n/services';
 
-export default App;
+class App extends NextApp {
+  render() {
+    const { Component, pageProps } = this.props;
+    return (
+      <>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </>
+    );
+  }
+}
+
+export default appWithTranslation(App);

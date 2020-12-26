@@ -1,9 +1,12 @@
 import React from 'react';
 
 import { HomePage } from '@/home/pages';
+import { I18nPage, includeDefaultNs } from '@/i18n/services';
 
-export type HomeRouteProps = {};
+const HomeRoute: I18nPage = () => <HomePage />;
 
-export const HomeRoute: React.FC<HomeRouteProps> = () => <HomePage />;
+HomeRoute.getInitialProps = async () => ({
+  namespacesRequired: includeDefaultNs(['home']),
+});
 
 export default HomeRoute;
