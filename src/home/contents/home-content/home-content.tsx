@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 
-import * as Styled from './home-page.styles';
+import * as Styled from './home-content.styles';
 
-export type HomePageProps = {};
+export type HomeContentProps = {};
 
-export const HomePage: React.FC<HomePageProps> = () => (
+export const HomeContent: React.FC<HomeContentProps> = () => (
   <>
     <Head>
       <title>Create Next App</title>
@@ -57,4 +57,4 @@ export const HomePage: React.FC<HomePageProps> = () => (
   </>
 );
 
-export default HomePage;
+export default HomeContent;

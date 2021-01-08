@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { HomePage } from './home-page';
+import { HomeContent } from './home-content';
 
-describe('Pages', () => {
-  describe('HomePage', () => {
+describe('Contents', () => {
+  describe('HomeContent', () => {
     it('should render without throwing an error', () => {
-      render(<HomePage />);
+      render(<HomeContent />);
     });
   });
 });

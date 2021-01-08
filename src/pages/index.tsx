@@ -1,9 +1,12 @@
 import React from 'react';
+import { NextPage } from 'next';
 
-import { HomePage } from '@/home/pages';
+import { HomeContent } from '@/home/contents';
 
-export type HomeRouteProps = {};
+type HomePageProps = {};
 
-export const HomeRoute: React.FC<HomeRouteProps> = () => <HomePage />;
+const HomePage: NextPage<HomePageProps> = () => {
+  return <HomeContent />;
+};
 
-export default HomeRoute;
+export default HomePage;
