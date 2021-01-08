@@ -32,3 +32,12 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Visual Studio Code
+.code/
+
+# WebStorm
+.idea/
+
+# Project-specific stuffs
+/old/
