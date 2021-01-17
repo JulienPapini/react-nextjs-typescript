@@ -3,9 +3,9 @@ import { NextPage } from 'next';
 
 import { HomeContent } from '@/home/contents';
 
-type HomePageProps = {};
+type HomePagePropsType = {};
 
-const HomePage: NextPage<HomePageProps> = () => {
+const HomePage: NextPage<HomePagePropsType> = () => {
   return <HomeContent />;
 };
 

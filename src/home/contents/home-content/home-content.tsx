@@ -3,14 +3,15 @@ import Head from 'next/head';
 
 import * as Styled from './home-content.styles';
 
-export type HomeContentProps = {};
+export type HomeContentPropsType = {};
 
-export const HomeContent: React.FC<HomeContentProps> = () => (
+export const HomeContent: React.FC<HomeContentPropsType> = () => (
   <>
     <Head>
       <title>Create Next App</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
+
     <Styled.Container>
       <Styled.Main>
         <Styled.Title>
